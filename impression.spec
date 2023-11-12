@@ -11,8 +11,8 @@ Source2:        cargo_config
 
 BuildRequires: meson
 BuildRequires: rust
-BuildRequires: blueprint-compiler
-BuildRequires: /usr/bin/appstreamcli
+BuildRequires: pkgconfig(blueprint-compiler)
+BuildRequires: appstream
 BuildRequires: pkgconfig(gtk4) 
 BuildRequires: pkgconfig(libadwaita-1)
 BuildRequires: pkgconfig(openssl)
