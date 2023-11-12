@@ -1,3 +1,4 @@
+%define _empty_manifest_terminate_build 0
 Name: impression
 Version: 3.0.1
 Release: 1
