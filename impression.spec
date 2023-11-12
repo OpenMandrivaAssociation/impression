@@ -15,6 +15,7 @@ BuildRequires: cargo
 BuildRequires: pkgconfig(blueprint-compiler)
 BuildRequires: python-blueprint-compiler
 BuildRequires: python-gi
+BuildRequires: python-gobject3
 BuildRequires: appstream
 BuildRequires: pkgconfig(gtk4) 
 BuildRequires: pkgconfig(libadwaita-1)
