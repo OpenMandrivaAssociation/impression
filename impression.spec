@@ -38,7 +38,5 @@ cards.
 %_desktopdir/%rdn_name.desktop
 %_datadir/%name/
 %_datadir/glib-2.0/schemas/%rdn_name.gschema.xml
-#%_datadir/dbus-1/services/%rdn_name.service
 %_iconsdir/hicolor/*/*/*.svg
 %_datadir/metainfo/%rdn_name.metainfo.xml
-%doc PRESS* README*
