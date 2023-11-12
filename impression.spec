@@ -21,6 +21,7 @@ BuildRequires: pkgconfig(gtk4)
 BuildRequires: pkgconfig(libadwaita-1)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(dbus-1)
+BuildRequires: pkgconfig(gobject-introspection-1.0)
 
 %description
 A tool to write images to portable drives like flash drives or memory
