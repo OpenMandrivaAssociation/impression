@@ -39,9 +39,9 @@ cards.
 %find_lang %name
 
 %files -f %name.lang
-%_bindir/%name
-%_desktopdir/%rdn_name.desktop
-%_datadir/%name/
-%_datadir/glib-2.0/schemas/%rdn_name.gschema.xml
-%_iconsdir/hicolor/*/*/*.svg
-%_datadir/metainfo/%rdn_name.metainfo.xml
+%{_bindir}/%name
+#_desktopdir/%rdn_name.desktop
+#_datadir/%name/
+#_datadir/glib-2.0/schemas/%rdn_name.gschema.xml
+#_iconsdir/hicolor/*/*/*.svg
+#_datadir/metainfo/%rdn_name.metainfo.xml
