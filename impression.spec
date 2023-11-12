@@ -41,8 +41,8 @@ cards.
 
 %files -f %name.lang
 %{_bindir}/%name
-%{_datadir}/share/applications/io.gitlab.adhami3310.Impression.desktop
-%{_datadir}/share/glib-2.0/schemas/io.gitlab.adhami3310.Impression.gschema.xml
+%{_datadir}/applications/io.gitlab.adhami3310.Impression.desktop
+%{_datadir}/glib-2.0/schemas/io.gitlab.adhami3310.Impression.gschema.xml
 %{_iconsdir}/hicolor/scalable/*
 %{_iconsdir}/hicolor/symbolic/*
 %{_datadir}/impression/resources.gresource
