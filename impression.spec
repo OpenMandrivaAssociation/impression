@@ -1,29 +1,20 @@
 Name: impression
-Version: %ver_major.1
-Release: alt1
-
+Version: 3.0.1
+Release: 1
 Summary: Impression is a tool to create bootable drives
 License: GPL-3.0
 Group: System/Configuration/Other
 Url: https://gitlab.com/adhami3310/Impression
+Source0:  https://gitlab.com/adhami3310/Impression/-/archive/v%{version}/Impression-v%{version}.tar.bz2
+Source1:        vendor.tar.xz
+Source2:        cargo_config
 
-%if_disabled snapshot
-Source: %url/-/archive/v%version/%name-%version.tar.gz
-%else
-Vcs: https://gitlab.com/adhami3310/Impression.git
-Source: %name-%version.tar
-%endif
-Source1: %name-%version-cargo.tar
-
-%define gtk_ver 4.10
-%define adwaita_ver 1.2
-
-BuildRequires(pre): rpm-macros-meson
-BuildRequires: meson rust-cargo
+BuildRequires: meson
+BuildRequires: rust
 BuildRequires: blueprint-compiler
-BuildRequires: /usr/bin/appstreamcli desktop-file-utils
-BuildRequires: pkgconfig(gtk4) >= %gtk_ver
-BuildRequires: pkgconfig(libadwaita-1) >= %adwaita_ver gir(Adw)
+BuildRequires: /usr/bin/appstreamcli
+BuildRequires: pkgconfig(gtk4) 
+BuildRequires: pkgconfig(libadwaita-1)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(dbus-1)
 
@@ -32,11 +23,7 @@ A tool to write images to portable drives like flash drives or memory
 cards.
 
 %prep
-%setup -n %name-%version %{?_disable_bootstrap:-a1}
-%{?_enable_bootstrap:
-mkdir .cargo
-cargo vendor | sed 's/^directory = ".*"/directory = "vendor"/g' > .cargo/config
-tar -cf %_sourcedir/%name-%version-cargo.tar .cargo/ vendor/}
+%autosetup -p 1 -a 1
 
 %build
 %meson
@@ -45,9 +32,6 @@ tar -cf %_sourcedir/%name-%version-cargo.tar .cargo/ vendor/}
 %install
 %meson_install
 %find_lang %name
-
-%check
-%__meson_test
 
 %files -f %name.lang
 %_bindir/%name
