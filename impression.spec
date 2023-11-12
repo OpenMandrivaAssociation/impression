@@ -23,7 +23,7 @@ A tool to write images to portable drives like flash drives or memory
 cards.
 
 %prep
-%autosetup -p 1 -a 1
+%autosetup -n %{name}-v%{version} -p 1 -a 1
 
 %build
 %meson
