@@ -13,6 +13,7 @@ BuildRequires: meson
 BuildRequires: rust
 BuildRequires: cargo
 BuildRequires: pkgconfig(blueprint-compiler)
+BuildRequires: python-blueprint-compiler
 BuildRequires: appstream
 BuildRequires: pkgconfig(gtk4) 
 BuildRequires: pkgconfig(libadwaita-1)
