@@ -10,6 +10,7 @@ Source0:  https://gitlab.com/adhami3310/Impression/-/archive/v%{version}/Impress
 Source1:        vendor.tar.xz
 Source2:        cargo_config
 
+BuildRequires: gettext
 BuildRequires: meson
 BuildRequires: rust
 BuildRequires: cargo
