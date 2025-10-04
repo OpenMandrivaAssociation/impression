@@ -15,6 +15,7 @@ BuildRequires: gettext
 BuildRequires: meson
 BuildRequires: rust
 BuildRequires: cargo
+BuildRequires: rust-packaging
 BuildRequires: pkgconfig(blueprint-compiler)
 BuildRequires: python-blueprint-compiler
 BuildRequires: python-gi
