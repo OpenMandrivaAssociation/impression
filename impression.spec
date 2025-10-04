@@ -33,8 +33,8 @@ cards.
 
 %prep
 %autosetup -n Impression-v%{version} -p 1 -a 1
-%cargo_prep -v vendor
-cat >>.cargo/config.toml <<EOF
+mkdir -p .cargo
+cat >> .cargo/config.toml << EOF
 [source.crates-io]
 replace-with = "vendored-sources"
 
