@@ -56,6 +56,6 @@ EOF
 %{_datadir}/glib-2.0/schemas/io.gitlab.adhami3310.Impression.gschema.xml
 %{_iconsdir}/hicolor/scalable/*
 %{_iconsdir}/hicolor/symbolic/*
-#{_datadir}/impression/icons/hicolor/scalable*
+%{_datadir}/dbus-1/services/io.gitlab.adhami3310.Impression.service
 %{_datadir}/impression/resources.gresource
 %{_datadir}/metainfo/io.gitlab.adhami3310.Impression.metainfo.xml
