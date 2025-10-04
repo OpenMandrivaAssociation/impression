@@ -8,7 +8,7 @@ Group: System/Configuration/Other
 Url: https://gitlab.com/adhami3310/Impression
 Source0:  https://gitlab.com/adhami3310/Impression/-/archive/v%{version}/Impression-v%{version}.tar.bz2
 Source1:        vendor.tar.xz
-Source2:        cargo_config
+#Source2:        cargo_config
 
 BuildRequires: desktop-file-utils
 BuildRequires: gettext
@@ -32,6 +32,14 @@ cards.
 
 %prep
 %autosetup -n Impression-v%{version} -p 1 -a 1
+%cargo_prep -v vendor
+cat >>.cargo/config.toml <<EOF
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+EOF
 
 %build
 %meson
