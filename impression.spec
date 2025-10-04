@@ -1,6 +1,6 @@
 %define _empty_manifest_terminate_build 0
 Name: impression
-Version: 3.3.0
+Version: 3.5.1
 Release: 1
 Summary: Impression is a tool to create bootable drives
 License: GPL-3.0
@@ -8,12 +8,14 @@ Group: System/Configuration/Other
 Url: https://gitlab.com/adhami3310/Impression
 Source0:  https://gitlab.com/adhami3310/Impression/-/archive/v%{version}/Impression-v%{version}.tar.bz2
 Source1:        vendor.tar.xz
-Source2:        cargo_config
+#Source2:        cargo_config
 
+BuildRequires: desktop-file-utils
 BuildRequires: gettext
 BuildRequires: meson
 BuildRequires: rust
 BuildRequires: cargo
+BuildRequires: rust-packaging
 BuildRequires: pkgconfig(blueprint-compiler)
 BuildRequires: python-blueprint-compiler
 BuildRequires: python-gi
@@ -31,6 +33,14 @@ cards.
 
 %prep
 %autosetup -n Impression-v%{version} -p 1 -a 1
+mkdir -p .cargo
+cat >> .cargo/config.toml << EOF
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+EOF
 
 %build
 %meson
@@ -46,6 +56,6 @@ cards.
 %{_datadir}/glib-2.0/schemas/io.gitlab.adhami3310.Impression.gschema.xml
 %{_iconsdir}/hicolor/scalable/*
 %{_iconsdir}/hicolor/symbolic/*
-#{_datadir}/impression/icons/hicolor/scalable*
+%{_datadir}/dbus-1/services/io.gitlab.adhami3310.Impression.service
 %{_datadir}/impression/resources.gresource
 %{_datadir}/metainfo/io.gitlab.adhami3310.Impression.metainfo.xml
