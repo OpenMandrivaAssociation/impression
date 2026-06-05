@@ -1,7 +1,7 @@
 %define _empty_manifest_terminate_build 0
 Name: impression
 Version: 3.5.3
-Release: 1
+Release: 2
 Summary: Impression is a tool to create bootable drives
 License: GPL-3.0
 Group: System/Configuration/Other
